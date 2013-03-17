@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <title>A small javascript text parser</title>
+        <meta charset="utf-8" />
+        <script src="parse.js"></script>
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body onload="go()">
+        <h1>A small javascript text parser</h1>
+        <textarea id="source">This text parser is very simple. It reads text line by line and creates HTML tags from the following markup.[nl/][nl/]
+
+* [[b] creates a [b]&lt; b &gt;[/] tag [nl/]
+* [[i] creates an [i]&lt; i &gt;[/] tag [nl/]
+* [[u] creates an [u]&lt; u &gt;[/] tag [nl/]
+* [[nl/] creates a line break (&lt; br /&gt;) [nl/]
+* [[h url] creates an [h http://github.com/ekynoxe]&lt; a &gt;anchor tag&lt; /a &gt;[/] [nl/]
+* '[[[['' is how you escape the '[[' character [nl/]
+* [[/] is a close tag. You can also write a close tag as [[/b], but the text inside is ignored[nl/]
+* You can also [b]nest [u][i]tags[/] if you wish[/][/].[nl/][nl/]
+Do let me know if this isn't working for you! [h https://github.com/ekynoxe/simple-js-text-parser]The code is on github[/]</textarea>
+        <button onClick="go()">parse &#11015;</button>
+        <div id="result"><span>This text parser is very simple. It reads text line by line and creates HTML tags from the following markup.<br><br>* [b] creates a <b>&lt; b &gt;</b> tag <br>* [i] creates an <em>&lt; em &gt;</em> tag <br>* [u] creates an <u>&lt; u &gt;</u> tag <br>* [nl/] creates a line break (&lt; br /&gt;) <br>* [h url] creates an <a href=" http://github.com/ekynoxe">&lt; a &gt;anchor tag&lt; /a &gt;</a> <br>* '[['' is how you escape the '[' character <br>* [/] is a close tag. You can also write a close tag as [/b], but the text inside is ignored<br><br>Do let me know if this isn't working for you! <a href="https://github.com/ekynoxe/simple-js-text-parser">The code is on github</a></span></div>
+        <footer>
+            <a href="https://twitter.com/Ekynoxe">@Ekynoxe on twitter</a>
+            <a href="https://github.com/ekynoxe/">Ekynoxe on Github</a>
+        </footer>
+    </body>
+</html>
